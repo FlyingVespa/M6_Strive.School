@@ -15,8 +15,9 @@ import {
 
 dotenv.config();
 console.log(process.env.PORT);
-const { PORT } = process.env;
+// const { PORT } = process.env;
 const server = express();
+const port = process.env.PORT || 3001;
 
 const publicFolderPath = join(
   dirname(fileURLToPath(import.meta.url)),
@@ -48,8 +49,8 @@ server.use(badRequestErrorHandler);
 server.use(catchAllErrorHandler);
 
 console.table(listEndpoints(server));
-server.listen(PORT, () =>
-  console.log(`✅ A portal has opened on ${PORT} , enter if you dare`)
+server.listen(port, () =>
+  console.log(`✅ A portal has opened on ${port} , enter if you dare`)
 );
 
 server.on("error", (error) =>

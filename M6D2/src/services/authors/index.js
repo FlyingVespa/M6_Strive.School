@@ -1,8 +1,6 @@
 import express from "express";
 import fs from "fs-extra";
 import uniqid from "uniqid";
-import { dirname, join } from "path";
-import { fileURLToPath } from "url";
 import createError from "http-errors";
 import { validationResult } from "express-validator";
 import {
